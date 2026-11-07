@@ -192,3 +192,47 @@ Modern evergreen browsers (Chrome, Edge, Firefox, Safari). Requires `crypto.rand
 ## License
 
 MIT
+---
+AWS Deployment
+The ToDoAI application is deployed on Amazon Web Services using Docker and Terraform.
+Live application
+Website: https://todoaidb.pp.ua
+
+Alternative URL: https://www.todoaidb.pp.ua
+Technologies and AWS services
+- Docker — application containerization.
+- Amazon ECR — Docker image storage.
+- Amazon EC2 — application hosting.
+- Application Load Balancer — traffic distribution.
+- EC2 Auto Scaling — automatic instance scaling.
+- Amazon Route 53 — DNS management.
+- AWS Certificate Manager — HTTPS certificate.
+- Terraform — Infrastructure as Code.
+- Nginx — serving the frontend.
+Infrastructure configuration
+- AWS Region: eu-central-1 (Frankfurt).
+- Auto Scaling Group: todoai-asg.
+- Minimum instances: 1.
+- Desired instances: 1.
+- Maximum instances: 2.
+- CPU target tracking: 60%.
+Deployment process
+1. Build the Docker image.
+2. Upload the image to Amazon ECR.
+3. Create AWS infrastructure using Terraform.
+4. Deploy the application on EC2 instances.
+5. Configure the Application Load Balancer.
+6. Configure DNS using Route 53.
+7. Enable HTTPS using AWS Certificate Manager.
+Terraform commands
+Run these commands from the infra directory:
+terraform init
+terraform validate
+terraform plan
+terraform apply
+
+
+Deployment screenshots
+See the screenshots/ directory for evidence of Docker, ECR, Terraform, AWS infrastructure and the running application.
+Application storage
+The application stores tasks in browser localStorage. It does not use a backend or database.

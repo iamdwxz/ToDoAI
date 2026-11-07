@@ -1,0 +1,7 @@
+# Local Terraform state and downloaded providers must never be committed.
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+terraform.tfvars
